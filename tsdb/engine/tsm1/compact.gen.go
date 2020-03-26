@@ -113,9 +113,10 @@ func (k *tsmKeyIterator) combineFloat(dedup bool) blocks {
 				continue
 			}
 			// If we this block is already full, just add it as is
-			if BlockCount(k.blocks[i].b) >= k.size {
+			if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 				k.merged = append(k.merged, k.blocks[i])
 			} else {
+				// TODO : log the error or propagate it
 				break
 			}
 			i++
@@ -312,9 +313,10 @@ func (k *tsmKeyIterator) combineInteger(dedup bool) blocks {
 				continue
 			}
 			// If we this block is already full, just add it as is
-			if BlockCount(k.blocks[i].b) >= k.size {
+			if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 				k.merged = append(k.merged, k.blocks[i])
 			} else {
+				// TODO : log the error or propagate it
 				break
 			}
 			i++
@@ -511,9 +513,10 @@ func (k *tsmKeyIterator) combineUnsigned(dedup bool) blocks {
 				continue
 			}
 			// If we this block is already full, just add it as is
-			if BlockCount(k.blocks[i].b) >= k.size {
+			if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 				k.merged = append(k.merged, k.blocks[i])
 			} else {
+				// TODO : log the error or propagate it
 				break
 			}
 			i++
@@ -710,9 +713,10 @@ func (k *tsmKeyIterator) combineString(dedup bool) blocks {
 				continue
 			}
 			// If we this block is already full, just add it as is
-			if BlockCount(k.blocks[i].b) >= k.size {
+			if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 				k.merged = append(k.merged, k.blocks[i])
 			} else {
+				// TODO : log the error or propagate it
 				break
 			}
 			i++
@@ -909,9 +913,10 @@ func (k *tsmKeyIterator) combineBoolean(dedup bool) blocks {
 				continue
 			}
 			// If we this block is already full, just add it as is
-			if BlockCount(k.blocks[i].b) >= k.size {
+			if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 				k.merged = append(k.merged, k.blocks[i])
 			} else {
+				// TODO : log the error or propagate it
 				break
 			}
 			i++
@@ -1117,9 +1122,10 @@ func (k *tsmBatchKeyIterator) combineFloat(dedup bool) blocks {
 			continue
 		}
 		// If we this block is already full, just add it as is
-		if BlockCount(k.blocks[i].b) >= k.size {
+		if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 			k.merged = append(k.merged, k.blocks[i])
 		} else {
+			// TODO : log the error or propagate it
 			break
 		}
 		i++
@@ -1336,9 +1342,10 @@ func (k *tsmBatchKeyIterator) combineInteger(dedup bool) blocks {
 			continue
 		}
 		// If we this block is already full, just add it as is
-		if BlockCount(k.blocks[i].b) >= k.size {
+		if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 			k.merged = append(k.merged, k.blocks[i])
 		} else {
+			// TODO : log the error or propagate it
 			break
 		}
 		i++
@@ -1555,9 +1562,10 @@ func (k *tsmBatchKeyIterator) combineUnsigned(dedup bool) blocks {
 			continue
 		}
 		// If we this block is already full, just add it as is
-		if BlockCount(k.blocks[i].b) >= k.size {
+		if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 			k.merged = append(k.merged, k.blocks[i])
 		} else {
+			// TODO : log the error or propagate it
 			break
 		}
 		i++
@@ -1774,9 +1782,10 @@ func (k *tsmBatchKeyIterator) combineString(dedup bool) blocks {
 			continue
 		}
 		// If we this block is already full, just add it as is
-		if BlockCount(k.blocks[i].b) >= k.size {
+		if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 			k.merged = append(k.merged, k.blocks[i])
 		} else {
+			// TODO : log the error or propagate it
 			break
 		}
 		i++
@@ -1993,9 +2002,10 @@ func (k *tsmBatchKeyIterator) combineBoolean(dedup bool) blocks {
 			continue
 		}
 		// If we this block is already full, just add it as is
-		if BlockCount(k.blocks[i].b) >= k.size {
+		if count, err := BlockCount(k.blocks[i].b); err == nil && count >= k.size {
 			k.merged = append(k.merged, k.blocks[i])
 		} else {
+			// TODO : log the error or propagate it
 			break
 		}
 		i++

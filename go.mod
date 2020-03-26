@@ -45,10 +45,12 @@ require (
 	github.com/xlab/treeprint v0.0.0-20180616005107-d6fb6747feb6
 	go.uber.org/zap v1.9.1
 	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
-	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e
-	golang.org/x/sys v0.0.0-20200107162124-548cf772de50
+	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e // indirect
+	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
+	golang.org/x/sys v0.0.0-20200323222414-85ca7c5b95cd
 	golang.org/x/text v0.3.2
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4
+	golang.org/x/tools v0.0.0-20200325203130-f53864d0dba1 // indirect
 	gonum.org/v1/gonum v0.6.0 // indirect
 	google.golang.org/grpc v1.26.0
 )

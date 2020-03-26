@@ -1539,7 +1539,11 @@ func TestCompacted_NotFull(t *testing.T) {
 		t.Fatalf("unexpected error reading block: %v", err)
 	}
 
-	if got, exp := BlockCount(block), 1; got != exp {
+	count, err := BlockCount(block)
+	if err != nil {
+		t.Fatalf("Block is corrupted: %v", err)
+	}
+	if exp, got := 1, count; got != exp {
 		t.Fatalf("block count mismatch: got %v, exp %v", got, exp)
 	}
 }

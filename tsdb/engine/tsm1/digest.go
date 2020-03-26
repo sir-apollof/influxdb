@@ -92,7 +92,8 @@ func DigestWithOptions(dir string, files []string, opts DigestOptions, w io.Writ
 					continue
 				}
 
-				cnt := BlockCount(b)
+				cnt, err := BlockCount(b)
+				// TODO : what to do with error
 				ts.Add(entry.MinTime, entry.MaxTime, cnt, crc)
 			}
 		}
